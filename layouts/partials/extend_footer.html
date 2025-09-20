@@ -1,0 +1,19 @@
+// pangu.js 自动在中英文之间添加空格
+{{- $highlight := resources.Get "js/pangu.min.js" -}}
+<script>
+  (function (u, c) {
+    var d = document,
+      t = "script",
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener("load", function (e) {
+        c(e);
+      });
+    }
+    s.parentNode.insertBefore(o, s);
+  })("{{ $highlight.RelPermalink }}", function () {
+    pangu.spacingPage();
+  });
+</script>

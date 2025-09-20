@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "LXGW";
+  src: url("/openfoam-feifan/fonts/lxgwwenkaiscreen.subset.v1.235.standard.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SFPro";
+  src: url("/openfoam-feifan/fonts/SFProText-Regular.woff2") format("woff2");
+}
+
+body {
+  /* font-family: 'LXGW', serif; 使用楷体字体 */
+  font-family: "SFPro", "LXGW";
+  /* font-family: "Source Han Sans", "LXGW"; */
+  font-size: 16px;  /* normal */
+  line-height: 1.6; /* normal */
+  word-break: break-word;
+  background: var(--theme);
+  font-display: swap; /* 添加这一行：防止字体加载时页面空白 */
+}
+
+/* 可选：为标题添加自定义字体 */
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Han Sans', sans-serif;
+} */
+
+/* 第一个帖子距离 menu 的距离*/
+.first-entry {
+  min-height: 220px;
+  margin: 0;
+}

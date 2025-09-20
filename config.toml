@@ -1,0 +1,169 @@
+# -------- 基本站点信息 --------
+baseURL = "https://feifan142.github.io/openfoam-feifan/"  # GitHub Pages 地址
+languageCode = "zh-cn"
+title = "Feifan Blogs"
+theme = "PaperMod"
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = false  # 各种语言放一个路径
+hasCJKLanguage = true # 自动检测是否包含 中文日文韩文 如果文章中使用了很多中文引号的话可以开启
+
+# -------- 分页设置亮 --------
+[pagination]
+  pagerSize = 10  # 每页显示的文章数
+# PaperMod 内置的 fast search（Fuse.js）功能
+[outputs]
+  home = ["HTML","RSS","JSON"]
+
+# -------- 生成 robots.txt --------
+enableRobotsTXT = true  # 允许爬虫抓取到搜索引擎，建议 true
+enableRSS = true
+enableEmoji = true
+
+# -------- Markdown 解析与代码高亮 --------
+# 旧版本的
+# pygmentsUseClasses = true     # 启用代码高亮时使用CSS类，而不是内联样式。
+# pygmentsCodeFences = true     # 代码高亮
+# pygmentsStyle = "monokai"     # gruvbox-light, 代码风格
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "monokai"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # 允许HTML内容在Markdown中直接渲染。
+
+# -------- PaperMod 主题参数 --------
+[params]
+  env = "production"
+  title = "OpenFOAM notes"
+  description = "OpenFOAM blogs, notes for spray and reacting solvers"    # 设置站点的SEO信息，帮助搜索引擎优化。
+  keywords = ["C++", "OpenFOAM", "atomization", "reaction"]               # 设置站点的SEO信息，帮助搜索引擎优化。
+  author = "feifan"
+  DateFormat = "January 2, 2006" # 使用 Go 的日期格式，这是标准的
+
+  # 主题显示设置
+  defaultTheme = "auto" # dark, light, auto
+  # 控制站点中各个功能项的显示，如阅读时间、分享按钮、导航链接、面包屑、字数统计等。
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowWordCount = true
+  ShowLastMod = true
+  ShowToc = true        # 显示目录
+  UseHugoToc = true
+  TocOpen = true        # 控制目录是否默认展开。
+  ShowCodeCopyButtons = true  # 官方示例有这个复制按钮，建议开启
+  ShowRssButtonInSectionTermList = true
+  EnableSearch = true         # 启用搜索功能
+  DisableSpecial1stPost = false
+  DisableScrollToTop = false
+  HideMeta = false
+  HideSummary = false
+  comments = true       # 启用/禁用评论。
+
+  # 配置个人信息卡片，设置标题和封面图片
+  [params.profileMode]
+    enabled = true
+    title = "OpenFOAM 学习笔记"
+    # title = "Some Notes for Atomization and Reaction Solvers" # optional default will be site title
+    imageUrl = "images/cover/OpenFOAM_logo.png" # optional
+    imageTitle = "OpenFOAM" # optional
+    imageWidth = 800 # custom size
+    imageHeight = 280 # custom size
+  # 封面图片配置（修正）
+  # [params.cover]
+  #   image = "images/cover/OpenFOAM_logo.png"
+  #   hiddenInList = true
+  #   hiddenInSingle = true
+  #   alt = "OpenFOAM Logo"
+  #   caption = "OpenFOAM Logo"
+  [params.homeInfoParams]
+    enabled = true
+  
+  # 配置按钮
+  [[params.buttons]]
+    name = "Archive"
+    url = "/archive"
+  [[params.buttons]]
+    name = "Github"
+    url = "https://github.com/feifan142"
+  # 社交图标（使用多行语法，更可靠）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/feifan142"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
+  [[params.socialIcons]]
+    name = "email"
+    url = "none"
+  [[params.socialIcons]]
+    name = "wechat"
+    url = "none"
+  [[params.socialIcons]]
+    name = "telegram"
+    url = "none"
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com"
+  
+  [params.label]
+    text = "Feifan Blogs"
+    icon = "images/cover/my.jpg"
+    iconHeight = 35
+  
+  # 动画效果
+  [params.animate]
+    enabled = true
+    delay = 100
+    duration = 300
+    
+  # 阅读进度条
+  [params.progress]
+    enabled = true
+    height = 3
+    color = "#1abc9c"
+
+  # [params.assets]   # 如果需要细化 assets 行为，在此处按 theme 文档写子项
+    # disableHLJS = true
+    # disableFingerprinting = false
+  [params.assets]
+    css = ["css/extended/custom.css", "css/extended/toc.css"]
+
+
+# -------- 菜单配置 --------
+[[menu.main]]
+  identifier = "home"
+  name = "🏠Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "posts"
+  name = "📚Posts"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "archives"
+  name = "⏱Archives"
+  url = "/archives/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "search"
+  name = "🔍Search"
+  url = "/search/" # 推荐添加 Search 页面
+  weight = 4
+
+[[menu.main]]
+  identifier = "about"
+  name = "🙋🏻‍♂️About"
+  url = "/about/"
+  weight = 5
+
+# -------- 分类和标签 --------
+[taxonomies]
+  tag = "tags"
+  category = "categories"
